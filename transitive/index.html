@@ -87,7 +87,7 @@
 						<script scr="https://smtpjs.com/v3/smtp.js"></script>
 						<script>
 							var btn = document.getElementById('btn');
-							btn.addEventListener('click',function(){
+							btn.addEventListener('click', function(e){
 								e.preventDefualt()
 								var name = document.getElementById('name').value;
 								var email = document.getElementById('email').value;
@@ -104,8 +104,6 @@
 								}).then(
 								message => alert(message)
 								)
-
-
 							})
 						</script>
 					</div>
