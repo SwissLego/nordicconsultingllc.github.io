@@ -61,15 +61,18 @@
 						<form method="post" action="#">
 							<div class="row uniform">
 								<div class="6u 12u$(xsmall)">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name"><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+									<input type="text" name="name" id="name" value="" placeholder="Name"><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
 								<div class="6u$ 12u$(xsmall)">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email"></div>
+									<input type="email" name="email" id="email" value="" placeholder="Email"></div>
 								<!-- Break -->
 								<div class="6u 12u$(small)">
 									<input type="checkbox" id="demo-copy" name="demo-copy"><label for="demo-copy">Email me a copy of this message</label>
 								</div>
 								<div class="6u$ 12u$(small)">
 									<input type="checkbox" id="demo-human" name="demo-human" checked><label for="demo-human">I am a human and not a robot</label>
+								</div>
+								<div class="6u$ 12u$(small)">
+									<input type="subject" name="subject" id="subject" value="" placeholder="Subject">
 								</div>
 								<!-- Break -->
 								<div class="12u$">
@@ -88,17 +91,19 @@
 								e.preventDefualt()
 								var name = document.getElementById('name').value;
 								var email = document.getElementById('email').value;
+								var subject = document.getElementById('subject').value;
 								var message = document.getElementById('message').value;
+								var body = 'name: '+name+'<br/> email: '+email+'<br/> Subject: '+subject+'<br/> message: '+message;
 
 								Email.send({
-									SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
-									To : 'them@website.com',
-									From : "you@isp.com",
-									Subject : "This is the subject",
-									Body : "And this is the body"
+									SecureToken : "44400408-b384-4ba2-963a-2bb8b5bab105",
+									To : 'jniser@nordicconsultingllc.com',
+									From : email,
+									Subject : "contact message",
+									Body :body
 								}).then(
 								message => alert(message)
-								);
+								)
 
 
 							})
