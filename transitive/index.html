@@ -79,7 +79,7 @@
 									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6" data-gramm="false" wt-ignore-input="true"></textarea></div>
 								<!-- Break -->
 								<div class="12u$">
-									<ul class="actions"><li><input type="submit" value="Send Message"></li>
+									<ul class="actions"><li><input type="submit" id="btn"  value="Send Message"></li>
 										<li><input type="reset" value="Reset" class="alt"></li>
 									</ul></div>
 							</div>
@@ -88,7 +88,7 @@
 						<script>
 							var btn = document.getElementById('btn');
 							btn.addEventListener('click', function(e){
-								e.preventDefualt()
+								return false;
 								var name = document.getElementById('name').value;
 								var email = document.getElementById('email').value;
 								var subject = document.getElementById('subject').value;
