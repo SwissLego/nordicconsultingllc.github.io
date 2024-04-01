@@ -96,26 +96,65 @@
             <form method="post" action="#">
                 <div class="row uniform">
                     <div class="6u 12u$(xsmall)">
-                        <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name"><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+                        <input type="text" name="name" id="name" value="" placeholder="Name" required><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
                     <div class="6u$ 12u$(xsmall)">
-                        <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email"></div>
+                        <input type="email" name="email" id="email" value="" placeholder="Email" required></div>
                     <!-- Break -->
-                    <div class="6u 12u$(small)">
-                        <input type="checkbox" id="demo-copy" name="demo-copy"><label for="demo-copy">Email me a copy of this message</label>
-                    </div>
                     <div class="6u$ 12u$(small)">
-                        <input type="checkbox" id="demo-human" name="demo-human"><label for="demo-human">I am a human and not a robot</label>
+                        <input type="checkbox" id="demo-human" name="demo-human" required><label for="demo-human">I am not a robot</label>
                     </div>
+                
                     <!-- Break -->
                     <div class="12u$">
-                        <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6" data-gramm="false" wt-ignore-input="true"></textarea></div>
+                        <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6" data-gramm="false" wt-ignore-input="true" required></textarea></div>
                     <!-- Break -->
                     <div class="12u$">
-                        <ul class="actions"><li><input type="submit" value="Send Message"></li>
+                        <ul class="actions"><li><input type="submit" id="btn"  value="Send Message"></li>
                             <li><input type="reset" value="Reset" class="alt"></li>
                         </ul></div>
                 </div>
             </form>
+            <script src="https://web3forms.com/client/script.js" async defer></script>
+            <script>
+            const form = document.getElementById('form');
+            const result = document.getElementById('result');
+            
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              const formData = new FormData(form);
+              const object = Object.fromEntries(formData);
+              const json = JSON.stringify(object);
+              result.innerHTML = "Please wait..."
+            
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = "Form submitted successfully";
+                        } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                    })
+                    .then(function() {
+                        form.reset();
+                        setTimeout(() => {
+                            result.style.display = "none";
+                        }, 3000);
+                    });
+            });
+            </script>
         </div>
     </div>
 </section></div>
