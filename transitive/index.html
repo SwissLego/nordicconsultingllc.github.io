@@ -70,12 +70,13 @@
 				<section><div class="box">
 					<div class="content">
 						<h2 class="align-center">Get in Touch</h2>
-						<form method="post" action="#">
+						<form method="POST" id="form" action="#">
+							<input type="hidden" name="access_key" value="bac38c5c-531e-45e6-872a-1674a10f05bd">
 							<div class="row uniform">
 								<div class="6u 12u$(xsmall)">
-									<input type="text" name="name" id="name" value="" placeholder="Name" required><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+									<input type="text" name="name" placeholder="Name" required><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
 								<div class="6u$ 12u$(xsmall)">
-									<input type="email" name="email" id="email" value="" placeholder="Email" required></div>
+									<input type="email" name="email" placeholder="Email" required></div>
 								<!-- Break -->
 								<div class="6u$ 12u$(small)">
 									<input type="checkbox" id="demo-human" name="demo-human" required><label for="demo-human">I am not a robot</label>
@@ -83,12 +84,13 @@
 							
 								<!-- Break -->
 								<div class="12u$">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6" data-gramm="false" wt-ignore-input="true" required></textarea></div>
+									<textarea name="demo-message" placeholder="Enter your message" rows="6" data-gramm="false" wt-ignore-input="true" required></textarea></div>
 								<!-- Break -->
 								<div class="12u$">
 									<ul class="actions"><li><input type="submit" id="btn"  value="Send Message"></li>
 										<li><input type="reset" value="Reset" class="alt"></li>
 									</ul></div>
+								<div id="result"></div>
 							</div>
 						</form>
 						<script src="https://web3forms.com/client/script.js" async defer></script>
