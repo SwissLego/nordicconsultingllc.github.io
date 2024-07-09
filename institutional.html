@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--
+	Transitive by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+--><html><head><title>Institutional evaluation and support - Nordic Consulting</title><meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/css/main.css"></head><body class="subpage">
+
+<!-- Header -->
+<header id="header"><div class="logo"><a href="index.html">Nordic Consulting LLC</a></div>
+    <a href="#menu" class="toggle"><span>Menu</span></a>
+</header><!-- Nav --><nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li>
+        <li><a href="academicEvaluation.html">Academic Evaluation and Positioning</a></li>
+        <li><a href="enrollment.html">Enrollment and Marketing</a></li>
+        <li><a href="institutional.html">Institutional Evaluation and Support</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="getInTouch.html">Get in Touch</a></li>
+    </ul></nav><!-- One --><section id="one" class="wrapper style2"><div class="inner">
+        <div class="box">
+            <div class="image fit">
+                <img src="images/pic07.jpg" alt="" width="3472" height="1035"></div>
+            <div class="content">
+                <header class="align-center"><h2>Institutional evaluation and support:</h2>
+                </header><hr>
+                <ol>
+                    <li>Governance Workshops:</li>
+                        <ul><li>Provide training sessions for board members on effective governance practices,
+                            ethical considerations, and legal responsibilities.</li></ul>
+                    <li>Strategic Planning:</li>
+                        <ul><li>Assist boards in developing and aligning strategic plans with the institution&#39;s
+                            mission and vision.</li></ul>
+                    <li>Leadership Development:</li>
+                        <ul><li>Offer programs to enhance the leadership skills of board members, ensuring
+                            effective decision-making and oversight.</li></ul>
+                    <li>Comprehensive institutional Review:</li>
+                        <ul><li>Evaluate the overall service profile of the institution, including academic,
+                            administrative, and support services.</li>
+                            <li>Compare the institution&#39;s services against industry benchmarks and best
+                                practices.</li>
+                        </ul>
+                    <li>Merger and Acquisition Due Diligence:</li>
+                     <ul><li>Conduct thorough due diligence on potential partners to assess compatibility and
+                        identify risks and opportunities.</li>
+                        <li>Develop detailed plans for merging institutions, including cultural integration,
+                            academic alignment, and administrative consolidation.</li>
+                        <li>Assess the success of mergers/acquisitions and provide ongoing support to
+                            address any challenges.</li>
+                     </ul>
+                </ol>    
+            </div>
+        </div>
+    </div>
+</section><!-- Four --><section id="four" class="wrapper style3"><div class="inner">
+
+        
+</section><!-- Footer --><footer id="footer" class="wrapper"><div class="inner">
+    <section><div class="box">
+        <div class="content">
+            <h2 class="align-center">Get in Touch</h2>
+            <form method="POST" id="form" action="#">
+                <input type="hidden" name="access_key" value="bac38c5c-531e-45e6-872a-1674a10f05bd">
+                <div class="row uniform">
+                    <div class="6u 12u$(xsmall)">
+                        <input type="text" name="name" placeholder="Name" required><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+                    <div class="6u$ 12u$(xsmall)">
+                        <input type="email" name="email" placeholder="Email" required></div>
+                    <!-- Break -->
+                    <div class="6u$ 12u$(small)">
+                        <input type="checkbox" id="demo-human" name="demo-human" required><label for="demo-human">I am not a robot</label>
+                    </div>
+                
+                    <!-- Break -->
+                    <div class="12u$">
+                        <textarea name="demo-message" placeholder="Enter your message" rows="6" data-gramm="false" wt-ignore-input="true" required></textarea></div>
+                    <!-- Break -->
+                    <div class="12u$">
+                        <ul class="actions"><li><input type="submit" id="btn"  value="Send Message"></li>
+                            <li><input type="reset" value="Reset" class="alt"></li>
+                        </ul></div>
+                    <div id="result"></div>
+                </div>
+            </form>
+            <script src="https://web3forms.com/client/script.js" async defer></script>
+            <script>
+            const form = document.getElementById('form');
+            const result = document.getElementById('result');
+            
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              const formData = new FormData(form);
+              const object = Object.fromEntries(formData);
+              const json = JSON.stringify(object);
+              result.innerHTML = "Please wait..."
+            
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = "Form submitted successfully";
+                        } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                    })
+                    .then(function() {
+                        form.reset();
+                        setTimeout(() => {
+                            result.style.display = "none";
+                        }, 3000);
+                    });
+            });
+            </script>
+        </div>
+    </div>
+</section></div>
+</footer><div class="copyright">
+    Powered by: <a href="https://templated.co/">Templated.co</a>.
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script></body></html>
